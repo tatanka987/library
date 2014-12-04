@@ -8,15 +8,16 @@
 
 <html>
 <body>
-<h1>Hello librarians!</h1>
+<BODY BGCOLOR=#FFEEC2>
+<h4><a href="javascript:history.back()">Назад</a></h4>
 
-<h2>The book you have chosen is</h2>
+<h2>О книге </h2>
 <% double parameter = Double.parseDouble (request.getParameter("bookid")); %>
 <% int bookid = (int)parameter; %>
 <% Book book = service.getBook(bookid);
 	
 %>
 <%= BookRenderer.toDetailedHtml(book) %><br>
-<h2><a href="javascript:history.back()">Back</a></h2>
+<h4><a href="javascript:history.back()">Назад</a></h4>
 </body>
 </html>

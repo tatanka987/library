@@ -8,8 +8,9 @@
 
 <html>
 <body>
-	<h1>Hello librarians!</h1>
-	<h2>The list of books is available below:</h2>
+	<BODY BGCOLOR=#FFEEC2>
+	<h1>Здравствуй дорогой читатель!</h1>
+	<h2>Для просмотра доступны следующие книги:</h2>
 
 	
 	<% java.util.List <Book> books = service.getAllBooks(); %>

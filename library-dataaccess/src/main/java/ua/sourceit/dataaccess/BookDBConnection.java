@@ -3,6 +3,7 @@ package ua.sourceit.dataaccess;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import ua.sourceit.dataaccess.Login;
 
 public class BookDBConnection {
 
@@ -15,7 +16,7 @@ public class BookDBConnection {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library","root","777"); 
+		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library",Login.getLogin(), Login.getPassword()); 
 		return connection;
 	}
 

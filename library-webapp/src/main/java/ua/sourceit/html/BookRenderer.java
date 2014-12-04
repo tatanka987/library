@@ -28,6 +28,5 @@ public class BookRenderer {
 		html.append("<h5>").append(book.getSummary()).append("</h5>");
 		html.append("</td>").append("</tr>").append("</table>");
 		return html.append("</div>").toString();
-		//return toHtml(book); 
-		}
+	}
 }

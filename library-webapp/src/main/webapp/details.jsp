@@ -8,7 +8,7 @@
 
 <html>
 <body>
-<BODY BGCOLOR=#FFEEC2>
+<BODY BGCOLOR=#FEF4D7>
 <h4><a href="javascript:history.back()">Назад</a></h4>
 
 <h2>О книге </h2>

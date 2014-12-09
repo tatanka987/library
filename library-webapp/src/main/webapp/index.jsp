@@ -11,6 +11,7 @@
 	<BODY BGCOLOR=#FEF4D7>
 	<h1>Здравствуй дорогой читатель!</h1>
 	<h2>Для просмотра доступны следующие книги:</h2>
+	<h3><a href="addbook.html">Добавить книгу</a></h3>
 
 	
 	<% java.util.List <Book> books = service.getAllBooks(); %>
@@ -19,5 +20,6 @@
 	<%= BookRenderer.toHtml(book) %><br>
 	<% } %> 
 	
+	<h3><a href="addbook.html">Добавить книгу</a></h3>
 </body>
 </html>

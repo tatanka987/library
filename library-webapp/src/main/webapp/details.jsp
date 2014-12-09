@@ -12,12 +12,11 @@
 <h4><a href="javascript:history.back()">Назад</a></h4>
 
 <h2>О книге </h2>
-<% double parameter = Double.parseDouble (request.getParameter("bookid")); %>
-<% int bookid = (int)parameter; %>
-<% Book book = service.getBook(bookid);
-	
-%>
+
+<% Book book = service.getBook(Integer.parseInt(request.getParameter("bookid")));%>
+
 <%= BookRenderer.toDetailedHtml(book) %><br>
+
 <h4><a href="javascript:history.back()">Назад</a></h4>
 </body>
 </html>

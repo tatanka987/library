@@ -8,7 +8,7 @@ public interface GenericDAO<K extends Serializable, T>
 {
     public T find(K id) throws SQLException;
     public List<T> find() throws SQLException;
-    public K save(T value);
-    public void update(T value);
+    public void save(T value) throws SQLException;
+    public void update(T value) throws SQLException;
     public void delete(T value);
 }

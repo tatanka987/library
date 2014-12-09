@@ -8,6 +8,17 @@ public class BookDTO {
 	private Integer year;
 	private String summary;
 	
+	public BookDTO() {}
+		
+	
+	public BookDTO(Integer id, String author, String bookName, Integer year, String summary) {
+		setId(id); 
+		setAuthor(author); 
+		setBookName(bookName);
+		setYear(year);
+		setSummary(summary);
+	}
+	
 	
 	public Integer getId() {
 		return id;

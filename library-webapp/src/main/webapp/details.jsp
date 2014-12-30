@@ -7,16 +7,20 @@
 <%! private BookService service = new BookServiceImpl(); %>
 
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Детальная информация о книге </title>
+</head>
 <body>
-<BODY BGCOLOR=#FEF4D7>
-<h4><a href="javascript:history.back()">Назад</a></h4>
+	<BODY BGCOLOR=#FEF4D7>
+	<h3><a href="index.jsp"> << Вернуться к списку книг</a></h3>
 
-<h2>О книге </h2>
+	<h2>О книге </h2>
 
-<% Book book = service.getBook(Integer.parseInt(request.getParameter("bookid")));%>
+	<% Book book = service.getBook(Integer.parseInt(request.getParameter("bookid")));%>
 
-<%= BookRenderer.toDetailedHtml(book) %><br>
+	<%= BookRenderer.toDetailedHtml(book) %><br>
 
-<h4><a href="javascript:history.back()">Назад</a></h4>
+	<h3><a href="index.jsp"> << Вернуться к списку книг</a></h3>
 </body>
 </html>

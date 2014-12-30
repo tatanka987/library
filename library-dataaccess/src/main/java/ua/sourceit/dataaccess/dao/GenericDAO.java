@@ -10,5 +10,5 @@ public interface GenericDAO<K extends Serializable, T>
     public List<T> find() throws SQLException;
     public void save(T value) throws SQLException;
     public void update(T value) throws SQLException;
-    public void delete(T value);
+    public void delete(K id) throws SQLException;
 }

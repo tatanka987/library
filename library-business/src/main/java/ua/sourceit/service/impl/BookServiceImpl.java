@@ -36,4 +36,12 @@ public class BookServiceImpl implements BookService {
 		BookDTO dto = new BookDTO(id, author, bookName, year, summary);
 		bookDAO.save(dto);
 	}
+	public void updateBook(Integer id, String author, String bookName, Integer year, String summary) throws SQLException {
+		BookDTO dto = new BookDTO(id, author, bookName, year, summary);
+		bookDAO.update(dto);
+	}
+	
+	public void deleteBook(Integer id) throws SQLException {
+		bookDAO.delete(id);
+	}
 }

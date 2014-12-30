@@ -16,6 +16,8 @@ public class BookDAO implements GenericDAO<Integer, BookDTO> {
 	private static final String FIND_BY_ID_SQL = "SELECT * FROM books WHERE id = ?";
 	private static final String FIND_BY_SQL = "SELECT * FROM books";
 	private static final String ADD_TO_SQL = "INSERT INTO books (author, name, year, summary) VALUES (?, ?, ?, ?)";
+	private static final String UPDATE_SQL = "UPDATE books SET author=?, name=?, year=?, summary=? WHERE id=?"; 
+	private static final String DELETE_BY_ID_SQL = "DELETE FROM books WHERE id=?"; 
 
 	public BookDTO find(Integer id) throws SQLException {
 
@@ -54,7 +56,7 @@ public class BookDAO implements GenericDAO<Integer, BookDTO> {
 	}
 
 	public List<BookDTO> find() throws SQLException {
-		ArrayList<BookDTO> book2 = new ArrayList<BookDTO>();
+		ArrayList<BookDTO> bookDTO = new ArrayList<BookDTO>();
 
 		Connection connection = BookDBConnection.getInstance();
 		BookDTO result = null;
@@ -65,7 +67,7 @@ public class BookDAO implements GenericDAO<Integer, BookDTO> {
 			try (ResultSet rs = stmt.executeQuery()) {
 				while (rs.next()) {
 					result = getBookDtoFromResultSet(rs);
-					book2.add(result);
+					bookDTO.add(result);
 				}
 			}
 		} catch (SQLException e) {
@@ -73,13 +75,14 @@ public class BookDAO implements GenericDAO<Integer, BookDTO> {
 			e.printStackTrace();
 		}
 
-		return book2;
+		return bookDTO;
 
 	}
 
 	public void save(BookDTO value) throws SQLException {
 		
 		Connection connection = BookDBConnection.getInstance();
+		
 		String author = value.getAuthor();
 		String name = value.getBookName();
 		Integer year = value.getYear();
@@ -98,12 +101,36 @@ public class BookDAO implements GenericDAO<Integer, BookDTO> {
 	}
 
 	public void update(BookDTO value) throws SQLException {
+		Connection connection = BookDBConnection.getInstance();
 		
+		Integer id = value.getId();
+		String author = value.getAuthor();
+		String name = value.getBookName();
+		Integer year = value.getYear();
+		String summary = value.getSummary();
 		
+		try {
+            PreparedStatement st = connection.prepareStatement(UPDATE_SQL);
+            st.setString(1, author);
+            st.setString(2, name);
+            st.setInt(3, year );
+            st.setString(4, summary);
+            st.setInt(5,id);
+            st.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 	}
 
-	public void delete(BookDTO value) {
-		// TODO Auto-generated method stub
-
+	public void delete(Integer id) throws SQLException {
+		Connection connection = BookDBConnection.getInstance();
+		
+		try {
+            PreparedStatement st = connection.prepareStatement(DELETE_BY_ID_SQL);
+            st.setInt(1, id);
+            st.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 	}
 }

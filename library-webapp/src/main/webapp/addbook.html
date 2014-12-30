@@ -5,30 +5,43 @@
   <title>Добавление новой книги</title>
  </head>
 
-
 <body>
+	
 	<BODY BGCOLOR=#FEF4D7>
 	<h1>Здесь можно добавить свою книгу</h1>
 	<h5> * все поля обязательно должны быть заполнены</h5>
 	
-	<form action="done.jsp" method="post" accept-charset="utf-8">
-    <table border="0"><tr><td align="left">
-       Автор: </td> <td valign="top">
-        <input type="text" size = "100" name="author" value="">
-       </td></tr><tr><td valign="top">
-       Название книги: </td> <td valign= "top">
-       <input type="text" size = "100" name="name" value="">
-       </td></tr><tr><td valign="top">
-       Год издания: </td> <td valign="top">
-       <input type="text" size = "4" name="year" value="">
-       </td></tr><tr><td valign="top">
-       Краткое содержание: </td> <td valign="top">
-       <textarea name="summary" cols="100" rows="4"></textarea>
-       </td></tr><tr><td valign="top">
- 
-       <input type="submit" value="Сохранить"></td></tr>
-       </table></form>
- 	 
+	<form action="addbook_done.jsp" method="post" accept-charset="utf-8">
+    	<table border="0">
+    		<tr>
+    			<td valign="top"> Автор: </td>
+    			<td valign="top"> <input type="text" size = "100" name="author" value="" required></td>
+    		</tr>
+	    		<tr>
+    			<td valign="top">Название книги: </td> 
+    			<td valign= "top"><input type="text" size = "100" name="name" value="" required></td>
+    		</tr>
+    		<tr>
+ 		   		<td valign="top">Год издания: </td> 
+  		  		<td valign="top"><input type="text" size = "4" name="year" value="" required></td>
+    		</tr>
+   			<tr>
+    			<td valign="top">Краткое содержание: </td>
+    			<td valign="top"><textarea name="summary" cols="100" rows="4" required></textarea></td>
+    		</tr>
+    		<tr>
+    			<td valign="top">  </td>
+    			<td valign="top">  </td>
+    		</tr>
+    		<tr>
+    			<td valign="top"><input type="reset"  style="background: #FC2847" value="Очистить форму"></td>
+    			<td valign="top" align="center"><input type="submit" value="Сохранить"></td>
+    			
+    		</tr>
+       </table>
+	</form>
+	
+	<h4><a href="index.jsp"> << Вернуться к списку книг</a></h4>
 	
 </body>
 </html>

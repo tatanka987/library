@@ -35,7 +35,7 @@ public class BookRenderer {
 	}
 	public static String toUpdateBookHtml(Book book) {
 		StringBuilder html = new StringBuilder();
-		html.append("<form ").append("action=\"update_done.jsp\"").append("method=\"post\"").append(">");
+		html.append("<form ").append("action=\"update_done.jsp\"").append("method=\"post\" ").append("accept-charset=\"UTF-8\"").append(">");
 		html.append("<table ").append("border=\"0\">")
 			.append("<tr>")
 			.append("<td ").append("valign=\"top\"").append(">").append("»Ì‚.π:").append("</td>")

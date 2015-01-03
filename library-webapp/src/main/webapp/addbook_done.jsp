@@ -7,6 +7,8 @@
 <%! private BookService service = new BookServiceImpl(); %>
 
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Книга добвалена</title>
 <body>
 	<BODY BGCOLOR=#FEF4D7>
 	<h1>Книга успешно добавлена</h1>
